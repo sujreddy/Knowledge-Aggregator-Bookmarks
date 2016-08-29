@@ -1,0 +1,85 @@
+
+<h3>Knowledge Aggregator : One place for all your links</h3>
+<form id="bookmarkForm" action="/bookmark/submit/" method="POST">
+  
+	<table>
+	<tr>
+		<td><span name="eng">Title</span></td>
+	    <td colspan="2"><input type="text" name="Title" id="Title"></td>
+	 </tr>
+	 <tr>
+		<td><span name="eng">URL</span></td>   
+	    <td colspan="2"><input id="URL" name="URL" type="text" value="" /></td>
+	 </tr>
+	 <tr>
+		<td><span name="eng">Search Tag</span></td>   
+	    <td colspan="2"><input id="Searchtag" name="Searchtag" type="text" value="" /></td>
+	 </tr>   
+	 <tr>
+		<td><span name="eng">Privacy Type</span><span class="required">*</span></td>
+		  <td colspan="2">
+			<select name="privacyType" id="privacyType" required>
+				<option label="Public" value="PUBLIC" />
+				<option label="Private" value="PRIVATE"/>
+				<option label="Companywide" value="COMPANYWIDE"/>							
+			</select>						
+		</td>					
+	 </tr>
+	 <tr>
+		 <td><span name="eng">User Name</span></td> 
+		 <td colspan="2"><input id="Username" name="Username" type="text" value="" /></td>
+	 </tr>
+
+	 <tr>
+		 <td><span name="eng">Company</span></td> 
+		 <td colspan="2"><input id="Company" name="Company" type="text" value="" /></td>
+	 </tr>
+	 <tr>
+		  
+		 <td colspan="2"><input type="hidden" name="createdDate" id="createdDate" value="" /></td>
+	 </tr>
+	    <tr>
+	    <td colspan="2"><input type="button" onclick="return saveBookmark();" value="Submit" /></td>
+		<td>
+		<input type="button" onclick="return getBookmark();" value="Get Bookmark" /></td>
+			<div>
+				{{# each items }}
+					<article class="item">
+						<div>Title: {{ this.Title }}</div>
+						<div>URL: {{ this.URL }}</div>
+						<div>Searchtag: {{ this.Searchtag }}</div>
+						<div>privacyType: {{ this.privacyType }}</div><br/>
+					</article>
+				{{/each}}
+			</div></td>
+		</tr>
+    </table>
+    
+</form>
+<script >
+	function saveBookmark(){
+		//var d = new Date();
+    
+    	//document.getElementById("createdDate").innerHTML = d;
+		var submitform = document.getElementById("bookmarkForm");
+		
+		submitform.method="POST";
+		submitform.action="/bookmark/Submit";
+		submitform.submit();
+	}
+
+	function getBookmark(){
+
+		var submitform = document.getElementById("bookmarkForm");
+		submitform.method="GET";
+		submitform.action="/bookmark/get-data";
+		submitform.submit();
+	}
+</script>
+<script>
+
+    var d = new Date();
+    
+    var timee=document.getElementById("createdDate").innerHTML = d;
+    alert(timee);
+</script>
