@@ -2,6 +2,9 @@
   "name": "knowledgeAggregator",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "5.9.1"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -14,5 +17,15 @@
     "mongodb": "^2.2.5",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sujreddy/Knowledge-Aggregator"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }
