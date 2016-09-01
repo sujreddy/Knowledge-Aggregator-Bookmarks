@@ -18,7 +18,7 @@ var options= {
  * Get port from environment and store in Express.
  */
 
-var port = process.env.PORT || '3411';
+var port = process.env.PORT || '3410';
 app.set('port', port);
 
 /**

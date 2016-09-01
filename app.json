@@ -1,0 +1,8 @@
+{
+  "name": "Start on Heroku: www.js",
+  "description": "Bookmarks on cloud",
+  "repository": "https://github.com/sujreddy/Knowledge-Aggregator",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs"
+}
